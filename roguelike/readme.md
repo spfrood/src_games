@@ -1,4 +1,4 @@
-Rogue-like JavaScript with image tiles
+Rogue-like with image tiles
 
 How to build map:
 
