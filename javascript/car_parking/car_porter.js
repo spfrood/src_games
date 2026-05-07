@@ -89,25 +89,34 @@ function draw() {
     ctx.clearRect(0, 0, canvas.clientWidth, canvas.height);
     drawField();
 
-    angle = (mouse.x - 480) / 10;
-    if (angle > 0) {
-        angle = 0;
-    } else if (angle < -45) {
-        angle = -45;
-    }
-    speedMod = 22.5 - Math.abs(angle);
+    // Vehicle center
+    let centerX = x + 30;
+    let centerY = y + 15;
 
-    // draw a .bmp image file on the screen
-    rotaImg(x, y, 60, 30, "car_01", angle);
+    // Vector from vehicle center to mouse
+    let dxToMouse = mouse.x - centerX;
+    let dyToMouse = mouse.y - centerY;
+    let distToMouse = Math.sqrt(dxToMouse * dxToMouse + dyToMouse * dyToMouse);
+
+    // Angle towards mouse in degrees; rotaImg multiplies degs by 4 internally, so divide by 4 here
+    angle = Math.atan2(dyToMouse, dxToMouse) * 180 / Math.PI;
+    rotaImg(x, y, 60, 30, "car_01", angle / 4);
     outBounds();
-    dx = (speed + level) * speedMod / 22.5;
-    dy = Math.abs(dx) - (speed + level);
-    x += dx;
-    y += dy;
 
-    document.getElementById("status_box1").innerHTML = "x: " + x + "   y: " + y;
-    document.getElementById("status_box2").innerHTML = "Angle: " + angle + "  dx: " + dx + "  dy: " + dy;
-    document.getElementById("status_box3").innerHTML = "speed: " + speed + "  speedMod:  " + speedMod;
+    // Move towards mouse, stop within 5px
+    if (distToMouse > 5) {
+        dx = (speed + level) * (dxToMouse / distToMouse);
+        dy = (speed + level) * (dyToMouse / distToMouse);
+        x += dx;
+        y += dy;
+    } else {
+        dx = 0;
+        dy = 0;
+    }
+
+    document.getElementById("status_box1").innerHTML = "x: " + x.toFixed(1) + "   y: " + y.toFixed(1);
+    document.getElementById("status_box2").innerHTML = "Angle: " + angle.toFixed(1) + "  dx: " + dx.toFixed(2) + "  dy: " + dy.toFixed(2);
+    document.getElementById("status_box3").innerHTML = "speed: " + speed + "  distance: " + distToMouse.toFixed(1);
 
     requestAnimationFrame(draw);
 }
