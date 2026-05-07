@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="match3-html.css">
+
+</head>
+
+<body>
+
+    <center>
+        <p id="someTest">It is pitch black. </br>You are likely to be eaten by a grue.</p>
+        </br>
+        <table id="tile_field" style="width:260px">
+            <tr>
+                <th colspan="8">Randomized Tiles</th>
+            </tr>
+            <tr>
+                <td class="tile" id="R0C0">R0C0</td>
+                <td class="tile" id="R0C1">R0C1</td>
+                <td class="tile" id="R0C2">R0C2</td>
+                <td class="tile" id="R0C3">R0C3</td>
+                <td class="tile" id="R0C4">R0C4</td>
+                <td class="tile" id="R0C5">R0C5</td>
+                <td class="tile" id="R0C6">R0C6</td>
+                <td class="tile" id="R0C7">R0C7</td>
+            </tr>
+            <tr>
+                <td class="tile" id="R1C0">R1C0</td>
+                <td class="tile" id="R1C1">R1C1</td>
+                <td class="tile" id="R1C2">R1C2</td>
+                <td class="tile" id="R1C3">R1C3</td>
+                <td class="tile" id="R1C4">R1C4</td>
+                <td class="tile" id="R1C5">R1C5</td>
+                <td class="tile" id="R1C6">R1C6</td>
+                <td class="tile" id="R1C7">R1C7</td>
+            </tr>
+            <tr>
+                <td class="tile" id="R2C0">R2C0</td>
+                <td class="tile" id="R2C1">R2C1</td>
+                <td class="tile" id="R2C2">R2C2</td>
+                <td class="tile" id="R2C3">R2C3</td>
+                <td class="tile" id="R2C4">R2C4</td>
+                <td class="tile" id="R2C5">R2C5</td>
+                <td class="tile" id="R2C6">R2C6</td>
+                <td class="tile" id="R2C7">R2C7</td>
+            </tr>
+            <tr>
+                <td class="tile" id="R3C0">R3C0</td>
+                <td class="tile" id="R3C1">R3C1</td>
+                <td class="tile" id="R3C2">R3C2</td>
+                <td class="tile" id="R3C3">R3C3</td>
+                <td class="tile" id="R3C4">R3C4</td>
+                <td class="tile" id="R3C5">R3C5</td>
+                <td class="tile" id="R3C6">R3C6</td>
+                <td class="tile" id="R3C7">R3C7</td>
+            </tr>
+            <tr>
+                <td class="tile" id="R4C0">R4C0</td>
+                <td class="tile" id="R4C1">R4C1</td>
+                <td class="tile" id="R4C2">R4C2</td>
+                <td class="tile" id="R4C3">R4C3</td>
+                <td class="tile" id="R4C4">R4C4</td>
+                <td class="tile" id="R4C5">R4C5</td>
+                <td class="tile" id="R4C6">R4C6</td>
+                <td class="tile" id="R4C7">R4C7</td>
+            </tr>
+            <tr>
+                <td class="tile" id="R5C0">R5C0</td>
+                <td class="tile" id="R5C1">R5C1</td>
+                <td class="tile" id="R5C2">R5C2</td>
+                <td class="tile" id="R5C3">R5C3</td>
+                <td class="tile" id="R5C4">R5C4</td>
+                <td class="tile" id="R5C5">R5C5</td>
+                <td class="tile" id="R5C6">R5C6</td>
+                <td class="tile" id="R5C7">R5C7</td>
+            </tr>
+            <tr>
+                <td class="tile" id="R6C0">R6C0</td>
+                <td class="tile" id="R6C1">R6C1</td>
+                <td class="tile" id="R6C2">R6C2</td>
+                <td class="tile" id="R6C3">R6C3</td>
+                <td class="tile" id="R6C4">R6C4</td>
+                <td class="tile" id="R6C5">R6C5</td>
+                <td class="tile" id="R6C6">R6C6</td>
+                <td class="tile" id="R6C7">R6C7</td>
+            </tr>
+            <tr>
+                <td class="tile" id="R7C0">R7C0</td>
+                <td class="tile" id="R7C1">R7C1</td>
+                <td class="tile" id="R7C2">R7C2</td>
+                <td class="tile" id="R7C3">R7C3</td>
+                <td class="tile" id="R7C4">R7C4</td>
+                <td class="tile" id="R7C5">R7C5</td>
+                <td class="tile" id="R7C6">R7C6</td>
+                <td class="tile" id="R7C7">R7C7</td>
+            </tr>
+        </table>
+        </br>
+
+        <button onclick="nextStep()">START</button>
+
+        </br>
+        <p id="status_box1">This is Status Box 1</p>
+        <p id="status_box2">This is Status Box 2</p>
+        <p id="status_box3">This is Status Box 3</p>
+        <p id="status_box4">This is Status Box 4</p>
+        <p id="status_box5">This is Status Box 5</p>
+        <p id="status_box6">This is Status Box 6</p>
+        <p id="status_box7">This is Status Box 7</p>
+        <h1 id="program_ended"></h1>
+    </center>
+
+</body>
+<footer>
+    <script src="match3-html.js"></script>
+</footer>
+
+</html>

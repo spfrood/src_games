@@ -1,0 +1,26 @@
+
+
+canvas {
+    border: 1px solid #000000;
+    background-color: #442244;
+}
+
+body {
+    background-color: #cacaca;
+}
+
+#someTest {
+    background-color: #010101;
+    color: #540045;
+}
+
+#tile_field {
+    border-color: #000000;
+    border: 1px solid;
+}
+
+.tile {
+    border: 1px;
+    width: 30px;
+    height: 30px;
+}
